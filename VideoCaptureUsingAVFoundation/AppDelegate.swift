@@ -6,7 +6,13 @@
 //  Copyright (c) 2015 Mohsin. All rights reserved.
 //
 
+// http://jamesonquave.com/blog/taking-control-of-the-iphone-camera-in-ios-8-with-swift-part-1/
+// http://jamesonquave.com/blog/taking-control-of-the-iphone-camera-in-ios-8-with-swift-part-2/
+
+
 import UIKit
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

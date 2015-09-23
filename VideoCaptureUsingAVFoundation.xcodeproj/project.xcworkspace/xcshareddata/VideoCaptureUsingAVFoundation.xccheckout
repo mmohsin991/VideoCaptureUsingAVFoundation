@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C29DF56F-AEBC-40B6-81DB-1C213CEABF4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VideoCaptureUsingAVFoundation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3691CAFF2F5C56769C8617B126DE9E3EB0EB6BF9</key>
+		<string>https://github.com/mmohsin991/VideoCaptureUsingAVFoundation.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VideoCaptureUsingAVFoundation.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3691CAFF2F5C56769C8617B126DE9E3EB0EB6BF9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mmohsin991/VideoCaptureUsingAVFoundation.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3691CAFF2F5C56769C8617B126DE9E3EB0EB6BF9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3691CAFF2F5C56769C8617B126DE9E3EB0EB6BF9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VideoCaptureUsingAVFoundation</string>
+		</dict>
+	</array>
+</dict>
+</plist>

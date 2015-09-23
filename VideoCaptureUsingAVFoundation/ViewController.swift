@@ -25,7 +25,8 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     var player:MPMoviePlayerViewController!
     
     // If we find a device we'll store it here for later use
-    var captureDevice : AVCaptureDevice?
+    var captureVideoDevice : AVCaptureDevice?
+    var captureAudioDevice : AVCaptureDevice?
     
     
     override func viewDidLoad() {
@@ -37,21 +38,32 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
 
         
         let devices = AVCaptureDevice.devices()
-        captureSession
         
         // Loop through all the capture devices on this phone
         for device in devices {
+            
+            println(device)
+            //for microphone
+            if(device.hasMediaType(AVMediaTypeAudio))
+            {
+                println("Capture audio device found")
+                self.captureAudioDevice = device as? AVCaptureDevice
+            }
             // Make sure this particular device supports video
-            if (device.hasMediaType(AVMediaTypeVideo)) {
+            else if (device.hasMediaType(AVMediaTypeVideo)) {
                 // Finally check the position and confirm we've got the back camera
                 if(device.position == AVCaptureDevicePosition.Back) {
-                    captureDevice = device as? AVCaptureDevice
-                    if captureDevice != nil {
-                        println("Capture device found")
-                        beginSession()
+                    self.captureVideoDevice = device as? AVCaptureDevice
+                    if self.captureVideoDevice != nil {
+                        println("Capture video device found")
                     }
                 }
             }
+        }
+        // record
+        if self.captureAudioDevice != nil && self.captureVideoDevice != nil {
+            beginSession()
+
         }
     }
 
@@ -61,7 +73,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     }
 
     func focusTo(value : Float) {
-        if let device = captureDevice {
+        if let device = captureVideoDevice {
 //            if(device.lockForConfiguration(nil)) {
 //                device.setFocusModeLockedWithLensPosition(value, completionHandler: { (time) -> Void in
 //                    //
@@ -87,7 +99,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     
     func configureDevice() {
-        if let device = captureDevice {
+        if let device = captureVideoDevice {
             device.lockForConfiguration(nil)
             device.focusMode = AVCaptureFocusMode.ContinuousAutoFocus
             device.unlockForConfiguration()
@@ -100,7 +112,8 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
         configureDevice()
         
         var err : NSError? = nil
-        captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
+        captureSession.addInput(AVCaptureDeviceInput(device: captureVideoDevice, error: &err))
+        captureSession.addInput(AVCaptureDeviceInput(device: captureAudioDevice, error: &err))
         
         if err != nil {
             println("error: \(err?.localizedDescription)")

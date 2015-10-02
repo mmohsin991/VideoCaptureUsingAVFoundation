@@ -177,7 +177,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
             "\(documentsDirectory)/\(dateTimePrefix)-\(fileNamePostfix++).mp4"
         } while (NSFileManager.defaultManager().fileExistsAtPath(filePath!))
         
-        self.fileOutput.startRecordingToOutputFileURL(NSURL(fileURLWithPath: filePath!), recordingDelegate: delegate)
+        self.fileOutput.startRecordingToOutputFileURL(NSURL(fileURLWithPath: filePath!), recordingDelegate: self)
         
         return NSURL(fileURLWithPath: filePath!)!
     }
